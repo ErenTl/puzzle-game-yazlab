@@ -15,8 +15,16 @@ function PuzzleGame() {
     reader.readAsDataURL(file);
   }
 
-
-
+  const boardStyle = {
+    width: "600px",
+    // height: "750px",
+    // border: "2px solid #333",
+    // overflow: "hidden",
+    margin: "0 auto",
+    display: "flex",
+    flexWrap: "wrap",
+  };
+  
   return (
     <div>
       <input type="file" onChange={handleImageUpload} />
