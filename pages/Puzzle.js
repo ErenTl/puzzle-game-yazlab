@@ -49,6 +49,35 @@ const PuzzleGame = ({ imageSrc }) => {
   }, [imageSrc]);
 
 
+
+  const handleTileClick = async (index) => {
+    console.log("index: " + index);
+    
+    console.log("firstClick: " + firstClick);
+    console.log("secondClick: " + secondClick);
+
+    if(JSON.stringify(tiles[index]) === JSON.stringify(originalTiles[index])) {
+      alert("Bu kare zaten doğru yerinde");
+    }else{
+      if(firstClick==-1) {
+          await setFirstClick(index);
+      }else {
+          await setSecondClick(index);
+          // checkSolved(tiles);
+      }
+      await console.log("firstClick: " + firstClick);
+      await console.log("secondClick: " + secondClick);
+      if(firstClick!=-1 && secondClick!=-1) {
+          console.log("GİRDİM");
+          await setFirstClick(index);
+          await setSecondClick(-1);
+      }
+    }
+
+    
+
+  };
+
   return (
     <div className="">
 
@@ -56,12 +85,13 @@ const PuzzleGame = ({ imageSrc }) => {
         <div
           key={index}
           className={`puzzle-tile ${JSON.stringify(tile) === JSON.stringify(originalTiles[index]) ? "solved" : "unsolved"}`}
+          onClick={() => handleTileClick(index)}
           style={{ backgroundImage: `url(${tile})` }}> 
         </div>
       ))}
       {solved && (
         <div className="puzzle-solved-overlay">
-          <h6>Tebrikler! Puzzle'ı çözdünüz!</h6>
+          <h6>Congratulations! You solved the puzzle!</h6>
         </div>
       )}
     </div>
