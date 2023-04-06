@@ -1,26 +1,89 @@
-html,
-body {
-  padding: 0;
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+}
+body{
+    height:100vh;
+    background: rgb(255,114,119);
+    background: linear-gradient(0deg, rgba(255,114,119,1) 0%, rgba(249,81,154,1) 100%);
+    background-position: center;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", Arial;
+} 
+#logo img{
+  width: 500px;
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+	
+       
+        height: 350px; 
+    
+}
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-30px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }
 
-a {
-  color: inherit;
+fieldset{
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -105px;
+  color: white;
+  border: 0px;
+}
+
+
+#info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+}
+
+#informatorio{
+  width:300px;
+}
+
+#cod3r{
+  width: 200px;
+}
+
+#bot{
+  text-align: center;
+}
+#bot a{
   text-decoration: none;
+  width: 100%;
+  padding: 20px;
+  margin: 10px;
+  border-radius: .55rem;
+  font-size: 20px;
+  font-family: "Poppins";
+  color: white;
+  border: 0px;
+  background: rgb(193,106,213);
+  background: linear-gradient(0deg, rgba(193,106,213,1) 0%,       rgba(53,37,175,1) 100%);
 }
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+#bot a:hover{
+  background: rgb(247,115,33);
+  background: linear-gradient(0deg, rgba(247,115,33,1) 0%, rgba(250,208,91,1) 100%);
+  transform: translateY(-3px);
+  box-shadow: 1px 5px 15px rgba(0,0,0,.1);
+  font-size: 23px;
 }
