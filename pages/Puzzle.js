@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from './Tile.module.css';
 
 const PuzzleGame = ({ imageSrc }) => {
   const [tiles, setTiles] = useState([]);
@@ -119,13 +120,23 @@ const PuzzleGame = ({ imageSrc }) => {
     }
   };
 
+  const boardStyle = {
+    width: "600px",
+    // height: "750px",
+    // border: "2px solid #333",
+    // overflow: "hidden",
+    margin: "0 auto",
+    display: "flex",
+    flexWrap: "wrap",
+  };
+
   return (
-    <div className="">
+    <div style={boardStyle} className="">
 
       {tiles.map((tile, index) => (
         <div
           key={index}
-          className={`puzzle-tile ${JSON.stringify(tile) === JSON.stringify(originalTiles[index]) ? "solved" : "unsolved"}`}
+          className={styles.puzzletile + " " + (JSON.stringify(tile) === JSON.stringify(originalTiles[index]) ? styles.solved : "")}
           onClick={() => handleTileClick(index)}
           style={{ backgroundImage: `url(${tile})` }}> 
         </div>
@@ -138,5 +149,11 @@ const PuzzleGame = ({ imageSrc }) => {
     </div>
   );
 };
+
+PuzzleGame.getInitialProps = async ({ query }) => {
+  const imageSrc = query.photo;
+  return { imageSrc };
+};
+
 
 export default PuzzleGame;
