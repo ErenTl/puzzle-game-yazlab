@@ -129,7 +129,7 @@ const PuzzleGame = ({ imageSrc }) => {
       ))}
       {solved && (
         <div className="puzzle-solved-overlay">
-          <h6>Congratulations! You solved the puzzle!</h6>
+          <h6>Tebrikler! Puzzle'ı çözdünüz!</h6>
         </div>
       )}
     </div>
