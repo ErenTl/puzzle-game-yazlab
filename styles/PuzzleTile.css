@@ -1,0 +1,13 @@
+.puzzle-tile {
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 0, 0);
+    float: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+  }
+
+ .puzzle-tile.solved {
+    border: 2px solid rgb(0, 255, 0);
+ }
