@@ -48,7 +48,20 @@ const PuzzleGame = ({ imageSrc }) => {
     img.src = imageSrc;
   }, [imageSrc]);
 
+  useEffect(() => {
+    if(firstClick!=-1 && secondClick!=-1) {
+        console.log("GİRDİM EFFECT");
+        const newTiles = [...tiles];
+        var firstTile = tiles[firstClick];
+        var secondTile = tiles[secondClick];
+        newTiles[firstClick] = secondTile;
+        newTiles[secondClick] = firstTile;
 
+        setTiles(newTiles);
+
+        // checkSolved(tiles);
+    }
+  }, [firstClick, secondClick])
 
   const handleTileClick = async (index) => {
     console.log("index: " + index);
