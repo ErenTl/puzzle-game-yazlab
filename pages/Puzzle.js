@@ -67,6 +67,16 @@ const PuzzleGame = ({ imageSrc }) => {
     checkSolved();
   } , [tiles])
 
+
+  const shuffleTiles = (tilesArray) => {
+    console.log(tilesArray);
+    for (let i = tilesArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      console.log("j: " + j);
+      [tilesArray[i], tilesArray[j]] = [tilesArray[j], tilesArray[i]];
+    }
+  };
+
   const handleTileClick = async (index) => {
     console.log("index: " + index);
     
