@@ -91,6 +91,17 @@ const PuzzleGame = ({ imageSrc }) => {
 
   };
 
+  const checkSolved = () => {
+
+
+
+    if(tiles.every((value, index) => JSON.stringify(value) === JSON.stringify(originalTiles[index]))) {
+      setSolved(true);
+    }else {
+      setSolved(false);
+    }
+  };
+
   return (
     <div className="">
 
