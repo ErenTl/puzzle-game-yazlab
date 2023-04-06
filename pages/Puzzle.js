@@ -63,6 +63,10 @@ const PuzzleGame = ({ imageSrc }) => {
     }
   }, [firstClick, secondClick])
 
+  useEffect(() => {
+    checkSolved();
+  } , [tiles])
+
   const handleTileClick = async (index) => {
     console.log("index: " + index);
     
