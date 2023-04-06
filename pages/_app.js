@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import '../styles/PuzzleTile.css'
+// import '../styles/PuzzleTile.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

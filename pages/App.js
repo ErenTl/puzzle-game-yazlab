@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Puzzle from "./Puzzle";
+import HomePage from "./HomePage";
 
 
 function PuzzleGame() {
@@ -28,8 +28,9 @@ function PuzzleGame() {
   
   return (
     <div>
-      <input type="file" onChange={handleImageUpload} />
-      <div style={boardStyle}>{imageSrc && <Puzzle imageSrc={imageSrc} />}</div>
+      {/* <input type="file" onChange={handleImageUpload} />
+      <div style={boardStyle}>{imageSrc && <Puzzle imageSrc={imageSrc} />}</div> */}
+      <HomePage />
     </div>
   );
 }
