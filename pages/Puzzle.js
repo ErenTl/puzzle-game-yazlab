@@ -46,6 +46,7 @@ const PuzzleGame = ({ imageSrc }) => {
     };
 
     img.src = imageSrc;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imageSrc]);
 
   useEffect(() => {
@@ -61,10 +62,12 @@ const PuzzleGame = ({ imageSrc }) => {
 
         // checkSolved(tiles);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [firstClick, secondClick])
 
   useEffect(() => {
     checkSolved();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   } , [tiles])
 
 
@@ -129,7 +132,7 @@ const PuzzleGame = ({ imageSrc }) => {
       ))}
       {solved && (
         <div className="puzzle-solved-overlay">
-          <h6>Tebrikler! Puzzle'ı çözdünüz!</h6>
+          <h6>Tebrikler! Puzzle ı çözdünüz!</h6>
         </div>
       )}
     </div>
