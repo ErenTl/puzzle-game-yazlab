@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 
 export async function getScoreboard() {
     const response = await fetch(process.env.API_URL+'/api/scoreboard');
