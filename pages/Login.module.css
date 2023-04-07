@@ -1,0 +1,111 @@
+.body{
+    height:75vh;
+    background: rgb(255,114,119);
+    background: linear-gradient(0deg, rgba(255,114,119,1) 0%, rgba(249,81,154,1) 100%);
+    background-position: center;
+    font-family: "Poppins", Arial;
+  }  
+.box{
+    margin: 12% auto;
+    padding: 5% 0 0;
+    width: 450px;
+    height: 550px;
+    background: rgb(193,106,213);
+    background: linear-gradient(0deg, rgba(193,106,213,1) 0%,       rgba(53,37,175,1) 100%);
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.logo{
+    width: 480px;
+    margin: auto;
+    margin-top: -156px;
+  }
+
+.header3{
+    text-shadow: 2px 0 0 #FFD12B, -2px 0 0 #FFD12B, 0 2px 0 #FFD12B, 0 -2px 0 #FFD12B, 1px 1px #FFD12B, -1px -1px 0 #FFD12B, 1px -1px 0 #FFD12B, -1px 1px 0 #FFD12B;
+    color: #FF5758;
+    font-size: 40px;
+    padding: 11px;
+    text-align: center;
+  }
+
+  .inputgroup{
+    position: absolute;
+    top: 150px;
+    width: 280px;
+    transition: .5s;
+  }
+  .inputfield{
+    width: 100%;
+    padding: 20px;
+    margin: 5px 0;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+  }
+
+  .btn{
+    text-align: center;
+    width: 60%;
+    margin-left: 30px;
+    margin-top: 15px;
+    padding: 20px 30px;
+    cursor: pointer;
+    display: block;
+    
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: white;
+  
+    background: rgb(247,115,33);
+    background: linear-gradient(0deg, rgba(247,115,33,1) 0%, rgba(250,208,91,1) 100%);
+  }
+  .btn:hover{
+    background: rgb(255,114,119);
+    background: linear-gradient(0deg, rgba(255,114,119,1) 0%, rgba(249,81,154,1) 100%);
+    color: white;
+    transform: translateY(-2px);
+  }
+  .upload {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 200px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.buttonwrapper {
+    position: relative;
+    width: 150px;
+    text-align: center;
+    margin: 5% auto;
+    font-family: "Poppins", Arial; 
+}
+
+.buttonwrapper span.label {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    width: 100%;
+    background: rgb(247,115,33);
+    background: linear-gradient(0deg, rgba(247,115,33,1) 0%, rgba(250,208,91,1) 100%);
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 0;
+    text-transform:uppercase;
+    font-size:12px;
+  }
+
+  .login{
+  left: 74px;
+}

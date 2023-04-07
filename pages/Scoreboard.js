@@ -47,29 +47,7 @@ export default function Scoreboard() {
             );
         } )
       :"null"}
-{/* 
-        {data.map((item) => {
-            <p className={styles.p}>
-            {item.name} <span>{item.score}</span>
-          </p>
-        } )} */}
 
-          {/* <p className={styles.p}>
-            MERT GÖKYAR <span>31</span>
-          </p>
-          <p className={styles.p}>
-            BERRA OĞUZ<span>60</span>
-          </p>
-          <p className={styles.p}>
-            EREN TORUN<span>100</span>
-          </p>
-          <p className={styles.p}>
-            EREN TORUN<span>100</span>
-          </p>
-          <p className={styles.p}>
-            EREN TORUN<span>100</span>
-          </p> */}
-          
         </div>
         <div id="barra" className={styles.barra}></div>
         {/* <div id="btn" className={styles.btn}>
@@ -77,12 +55,11 @@ export default function Scoreboard() {
             DETAYLAR
           </a>
         </div> */}
-        <div id="atras" className={styles.atras} data-tooltip="GERİ">
+        {/* <div id="atras" className={styles.atras} data-tooltip="GERİ">
           <a href="#">
-            {/* <Image src="/geri.png" alt="GERİ" width={50} height={50} /> */}
             <img src="./geri.png" alt='GERİ'></img>
           </a>
-        </div>
+        </div> */}
 
         {/* <div id="box2">
   <div id="logo2">

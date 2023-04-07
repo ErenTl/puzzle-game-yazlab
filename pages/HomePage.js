@@ -10,11 +10,10 @@ export default function HomePage() {
 
     
 
-      const handlePuzzlePage = () => {
+      const handleLoginPage = () => {
         router.push({
-          pathname: '/Puzzle',
-          query: { photo: "./logo.png" }
-        },'/Puzzle');
+          pathname: '/Login'
+        });
       }
 
       const handleScoreboardPage = () => {
@@ -34,7 +33,7 @@ export default function HomePage() {
                 {/* <Link href={{ pathname: '/Puzzle', state: { photo: "./logo.png" } }}>
                 </Link> */}
 
-                    <a  onClick={handlePuzzlePage}>Go to Puzzle Page</a>
+                    <a  onClick={handleLoginPage}>Puzzle Oyununa Git!</a>
                 <a onClick={handleScoreboardPage}>SKOR TABLOSU</a>
             </fieldset>
         </section>
