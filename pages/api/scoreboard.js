@@ -22,7 +22,7 @@ const pool = require('../../lib/db');
 export default async function getScoreboard (req,res) {
   try{
       console.log("inside user/getScoreboard");
-      var x = await pool.query("select * from scoreboard");
+      var x = await pool.query("select * from (select distinct on (name) * from scoreboard order by name, score desc) t order by score desc");
       res.status(200).json(x.rows);
   }catch(err){
       res.status(500).json(err);

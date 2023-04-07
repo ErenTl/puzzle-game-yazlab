@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from './Tile.module.css';
+import { useRouter } from 'next/router';
 
 const PuzzleGame = ({ imageSrc, userName }) => {
   const [tiles, setTiles] = useState([]);
@@ -7,6 +8,13 @@ const PuzzleGame = ({ imageSrc, userName }) => {
   const [firstClick, setFirstClick] = useState(-1);
   const [secondClick, setSecondClick] = useState(-1);
   const [originalTiles, setOriginalTiles] = useState([]);
+  const [moveCount, setMoveCount] = useState(0);
+  const [score, setScore] = useState(0);
+  const [correctTile, setCorrectTile] = useState(0);
+  const [trueMove, setTrueMove] = useState(false);
+
+  const router = useRouter();
+
 
   useEffect(() => {
     const img = new Image();
@@ -60,6 +68,7 @@ const PuzzleGame = ({ imageSrc, userName }) => {
         newTiles[secondClick] = firstTile;
 
         setTiles(newTiles);
+        
 
         // checkSolved(tiles);
     }
@@ -68,8 +77,41 @@ const PuzzleGame = ({ imageSrc, userName }) => {
 
   useEffect(() => {
     checkSolved();
+
+    // var previousCorrectTile = correctTile;
+    // var currentCorrectTile = 0;
+    // tiles.map((tile, index) => {
+    //   if(JSON.stringify(tile) === JSON.stringify(originalTiles[index])) {
+    //     currentCorrectTile++;
+    //   }
+    // })
+    // setCorrectTile(currentCorrectTile);
+
+    // if(moveCount>0) {
+    //   if(previousCorrectTile < currentCorrectTile) {
+    //     setTrueMove(true);
+    //     setScore(score + 5/2);
+    //   }else{
+    //     setTrueMove(false);
+    //     setScore(score - 10/2);
+    //   }
+    // }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   } , [tiles])
+
+  useEffect(() => {
+    if(solved === true && moveCount > 1) {
+      handleEndPage();
+    }
+  }, [solved]);
+
+  const handleEndPage = () => {
+    router.push({
+        pathname: '/EndGame',
+        query: { userName: userName, moveCount: moveCount, score: score }
+    },'/EndGame');
+  }
 
 
   const shuffleTiles = (tilesArray) => {
@@ -79,6 +121,7 @@ const PuzzleGame = ({ imageSrc, userName }) => {
       console.log("j: " + j);
       [tilesArray[i], tilesArray[j]] = [tilesArray[j], tilesArray[i]];
     }
+    setScore(0);
   };
 
   const handleTileClick = async (index) => {
@@ -103,6 +146,32 @@ const PuzzleGame = ({ imageSrc, userName }) => {
           await setFirstClick(index);
           await setSecondClick(-1);
       }
+
+      if(firstClick!=-1 && secondClick==-1) {
+        await setMoveCount(moveCount+1);
+
+        var previousCorrectTile = correctTile;
+        var currentCorrectTile = 0;
+        tiles.map((tile, index) => {
+          if(JSON.stringify(tile) === JSON.stringify(originalTiles[index])) {
+            currentCorrectTile++;
+          }
+        })
+        setCorrectTile(currentCorrectTile);
+
+        if(moveCount>0) {
+          if(previousCorrectTile < currentCorrectTile) {
+            setTrueMove(true);
+            setScore(score + 5*(currentCorrectTile-previousCorrectTile));
+          }else{
+            setTrueMove(false);
+            setScore(score - 10);
+          }
+        }
+        
+      }
+      
+
     }
 
     
@@ -118,6 +187,9 @@ const PuzzleGame = ({ imageSrc, userName }) => {
     }else {
       setSolved(false);
     }
+
+    
+    
   };
 
   const boardStyle = {
@@ -134,7 +206,6 @@ const PuzzleGame = ({ imageSrc, userName }) => {
     <div>
       <p>İyi oyunlar {userName} </p>
       <div style={boardStyle} className="">
-        
         {tiles.map((tile, index) => (
           <div
             key={index}
@@ -143,6 +214,10 @@ const PuzzleGame = ({ imageSrc, userName }) => {
             style={{ backgroundImage: `url(${tile})` }}> 
           </div>
         ))}
+        <p>Hamle Sayısı: {moveCount}</p>
+        <p>|Skor: {score}</p>
+        <p>|Doğru yerdeki kare sayısı: {correctTile}</p>
+        <p>|Hamle: {trueMove?"Doğru":"Yanlış"}</p>
         {solved && (
           <div className="puzzle-solved-overlay">
             <h6>Tebrikler! Puzzle ı çözdünüz!</h6>
