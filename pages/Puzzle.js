@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from './Tile.module.css';
 
-const PuzzleGame = ({ imageSrc }) => {
+const PuzzleGame = ({ imageSrc, userName }) => {
   const [tiles, setTiles] = useState([]);
   const [solved, setSolved] = useState(false);
   const [firstClick, setFirstClick] = useState(-1);
@@ -131,28 +131,32 @@ const PuzzleGame = ({ imageSrc }) => {
   };
 
   return (
-    <div style={boardStyle} className="">
-
-      {tiles.map((tile, index) => (
-        <div
-          key={index}
-          className={styles.puzzletile + " " + (JSON.stringify(tile) === JSON.stringify(originalTiles[index]) ? styles.solved : "")}
-          onClick={() => handleTileClick(index)}
-          style={{ backgroundImage: `url(${tile})` }}> 
-        </div>
-      ))}
-      {solved && (
-        <div className="puzzle-solved-overlay">
-          <h6>Tebrikler! Puzzle ı çözdünüz!</h6>
-        </div>
-      )}
+    <div>
+      <p>İyi oyunlar {userName} </p>
+      <div style={boardStyle} className="">
+        
+        {tiles.map((tile, index) => (
+          <div
+            key={index}
+            className={styles.puzzletile + " " + (JSON.stringify(tile) === JSON.stringify(originalTiles[index]) ? styles.solved : "")}
+            onClick={() => handleTileClick(index)}
+            style={{ backgroundImage: `url(${tile})` }}> 
+          </div>
+        ))}
+        {solved && (
+          <div className="puzzle-solved-overlay">
+            <h6>Tebrikler! Puzzle ı çözdünüz!</h6>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 PuzzleGame.getInitialProps = async ({ query }) => {
   const imageSrc = query.photo;
-  return { imageSrc };
+  const userName = query.name;
+  return { imageSrc, userName };
 };
 
 

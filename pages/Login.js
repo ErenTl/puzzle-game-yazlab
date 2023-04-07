@@ -4,6 +4,11 @@ import { useRouter } from 'next/router';
 
 export default function Login() {
     const [imageSrc, setImageSrc] = useState(null);
+    const [name, setName] = useState(null);
+
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+    }
 
     const router = useRouter();
 
@@ -20,8 +25,10 @@ export default function Login() {
 
       const handlePuzzlePage = () => {
         router.push({
-          pathname: '/Puzzle',
-          query: { photo: imageSrc }
+            pathname: '/Puzzle',
+            query: { photo: imageSrc,
+                        name: name
+        }
         }, '/Puzzle');
       }
 
@@ -33,7 +40,7 @@ export default function Login() {
                 </div>
                 <form style={{left:"74px"}} className={styles.inputgroup}>
                     <h3 className={styles.header3}>KARE PUZZLE OYUNU</h3>
-                    <input  type="text" placeholder="ADINIZ" className={styles.inputfield} required></input>
+                    <input  type="text" placeholder="ADINIZ" className={styles.inputfield} value={name} onChange={e => handleNameChange(e)} required></input>
                     {/* <div className={styles.buttonwrapper}>
                         <span className={styles.label}>Dosya Seç</span>
                         <input className={styles.upload}  type="file"  onChange={handleImageUpload}></input>
