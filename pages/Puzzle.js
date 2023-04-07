@@ -12,6 +12,7 @@ const PuzzleGame = ({ imageSrc, userName }) => {
   const [score, setScore] = useState(0);
   const [correctTile, setCorrectTile] = useState(0);
   const [trueMove, setTrueMove] = useState(false);
+  const [shuffle, setShuffle] = useState(0);
 
   const router = useRouter();
 
@@ -56,7 +57,7 @@ const PuzzleGame = ({ imageSrc, userName }) => {
 
     img.src = imageSrc;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [imageSrc]);
+  }, [imageSrc, shuffle]);
 
   useEffect(() => {
     if(firstClick!=-1 && secondClick!=-1) {
@@ -173,6 +174,14 @@ const PuzzleGame = ({ imageSrc, userName }) => {
     
   };
 
+  const shuffleBoard = () => {
+    var newTiles = [...tiles];
+    shuffleTiles(newTiles);
+    setTiles(newTiles);
+    console.log("karıl");
+    // setMoveCount(0);
+  }
+
   const boardStyle = {
     width: "600px",
     // height: "750px",
@@ -199,6 +208,7 @@ const PuzzleGame = ({ imageSrc, userName }) => {
         <p>|Skor: {score}</p>
         <p>|Doğru yerdeki kare sayısı: {correctTile}</p>
         <p>|Hamle: {trueMove?"Doğru":"Yanlış"}</p>
+        <button onClick={shuffleBoard}>Karıştır</button>
         {solved && (
           <div className="puzzle-solved-overlay">
             <h6>Tebrikler! Puzzle ı çözdünüz!</h6>
