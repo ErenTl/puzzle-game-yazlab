@@ -1,0 +1,117 @@
+.body{
+    background: rgb(255,114,119);
+    background: linear-gradient(0deg, rgba(255,114,119,1) 0%, rgba(249,81,154,1) 100%);
+    background-position: center;
+    font-family: "Poppins", Arial;
+}
+.box{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    margin: 9% auto;
+    padding: 10% 0 0;
+    width: 530px;
+    height: 600px;
+    background: rgb(193,106,213);
+    background: linear-gradient(0deg, rgba(193,106,213,1) 0%,       rgba(53,37,175,1) 100%);
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+.logo{
+display: flex;
+justify-content: center;
+    padding: 100px;
+
+}
+
+.logo img{
+    width: 380px;
+    margin-top: -210px;
+}
+
+
+.header1{
+    text-shadow: 2px 0 0 #FFD12B, -2px 0 0 #FFD12B, 0 2px 0 #FFD12B, 0 -2px 0 #FFD12B, 1px 1px #FFD12B, -1px -1px 0 #FFD12B, 1px -1px 0 #FFD12B, -1px 1px 0 #FFD12B;
+    color: #FF5758;
+    font-size: 40px;
+    padding: 11px;
+}
+
+.score{
+    padding: 10px;
+    margin-top: -130px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.barra{
+    width: 80%;
+    background-color: white;
+    height: 2px;
+}
+
+
+.tops{
+    height: 250px;
+    width: 90%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+.tops p{
+    width: 85%;
+    color: white;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.btn{
+    text-align: center;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn a{
+    text-decoration: none;
+    padding: 20px;
+    width: 50%;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: "Poppins";
+    font-size: 20px;
+    color: white;
+    border: 0px;
+    background: rgb(247,115,33);
+    background: linear-gradient(0deg, rgba(247,115,33,1) 0%, rgba(250,208,91,1) 100%);
+}
+
+
+.atras{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 0px;
+    left: -98px;
+}
+.atras img{
+    width: 86px;
+    transition: 0.5s;
+}
+.atras img:hover{
+    width: 88px;
+}
