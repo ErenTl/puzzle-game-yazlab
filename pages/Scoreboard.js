@@ -41,7 +41,7 @@ export default function Scoreboard() {
         
         {!isLoading&!error? data.map((item,key) => {
             return(
-                <p className={styles.p}>
+                <p key={key+1} className={styles.p}>
             {key+1 + " " + item.name} <span>Hamle Sayısı: {item.moveCount} Skor: {item.score}</span>
           </p>
             );
