@@ -48,8 +48,6 @@ export default function Scoreboard() {
         } )
       :"null"}
 
-      <p className={styles.p}>SSS</p>
-      <p className={styles.p}>SSS</p>
 
 
 
