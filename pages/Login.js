@@ -24,12 +24,20 @@ export default function Login() {
       }
 
       const handlePuzzlePage = () => {
+        if(name==null||name=="") {
+            alert("Lütfen adınızı giriniz");
+        }else if(imageSrc==null) {
+            alert("Lütfen bir resim seçiniz");
+
+        }else {
+            
         router.push({
             pathname: '/Puzzle',
             query: { photo: imageSrc,
                         name: name
         }
         }, '/Puzzle');
+        }
       }
 
     return (

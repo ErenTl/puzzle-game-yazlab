@@ -34,6 +34,12 @@ const EndGame = ({ userName, moveCount, score }) => {
 
     }
 
+    const handlePlayAgain = () => {
+        router.push({
+            pathname: '/Login'
+        });
+    }
+
     return (
         <div className={styles.body}>
             <div className={styles.main}>
@@ -55,7 +61,7 @@ const EndGame = ({ userName, moveCount, score }) => {
                         <button onClick={handleSaveScore} className={styles.button}>Skorumu Kaydet</button>
                     </div>
                     <div className={styles.btn}>
-                        <button className={styles.button}>Tekrar Oyna</button>
+                        <button onClick={handlePlayAgain} className={styles.button}>Tekrar Oyna</button>
                     </div>
                 </div>
 
