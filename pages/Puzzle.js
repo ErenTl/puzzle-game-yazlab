@@ -78,25 +78,6 @@ const PuzzleGame = ({ imageSrc, userName }) => {
   useEffect(() => {
     checkSolved();
 
-    // var previousCorrectTile = correctTile;
-    // var currentCorrectTile = 0;
-    // tiles.map((tile, index) => {
-    //   if(JSON.stringify(tile) === JSON.stringify(originalTiles[index])) {
-    //     currentCorrectTile++;
-    //   }
-    // })
-    // setCorrectTile(currentCorrectTile);
-
-    // if(moveCount>0) {
-    //   if(previousCorrectTile < currentCorrectTile) {
-    //     setTrueMove(true);
-    //     setScore(score + 5/2);
-    //   }else{
-    //     setTrueMove(false);
-    //     setScore(score - 10/2);
-    //   }
-    // }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   } , [tiles])
 

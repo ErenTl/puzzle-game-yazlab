@@ -48,78 +48,16 @@ export default function Scoreboard() {
         } )
       :"null"}
 
+      <p className={styles.p}>SSS</p>
+      <p className={styles.p}>SSS</p>
+
+
+
         </div>
         <div id="barra" className={styles.barra}></div>
-        {/* <div id="btn" className={styles.btn}>
-          <a href="#" >
-            DETAYLAR
-          </a>
-        </div> */}
-        {/* <div id="atras" className={styles.atras} data-tooltip="GERİ">
-          <a href="#">
-            <img src="./geri.png" alt='GERİ'></img>
-          </a>
-        </div> */}
+       
 
-        {/* <div id="box2">
-  <div id="logo2">
-    <img src='logo.png'/>
-  </div>
-  <div id="container">
-    <div id="categoria1">
-      <h1>CULTURA Y ARTE</h1>
-      <div id="barracat"></div>
-      <p>ACIERTOS: <scan>6</scan></p>
-      <p>RESPONDIDAS: <scan>80</scan></p>
-      <p>PROMEDIO: <scan>25</scan></p>
-    </div>
-    <div id="categoria1">
-      <h1>HISTORIA</h1>
-      <div id="barracat"></div>
-      <p>ACIERTOS: <scan>6</scan></p>
-      <p>RESPONDIDAS: <scan>80</scan></p>
-      <p>PROMEDIO: <scan>25</scan></p>
-    </div>
-    <div id="categoria1">
-      <h1>DEPORTE</h1>
-      <div id="barracat"></div>
-      <p>ACIERTOS: <scan>6</scan></p>
-      <p>RESPONDIDAS: <scan>80</scan></p>
-      <p>PROMEDIO: <scan>25</scan></p>
-    </div>
-    <div id="categoria1">
-      <h1>GEOGRAFIA</h1>
-      <div id="barracat"></div>
-      <p>ACIERTOS: <scan>6</scan></p>
-      <p>RESPONDIDAS: <scan>80</scan></p>
-      <p>PROMEDIO: <scan>25</scan></p>
-    </div>
-    <div id="categoria1">
-      <h1>ECONOMIA</h1>
-      <div id="barracat"></div>
-      <p>ACIERTOS: <scan>6</scan></p>
-      <p>RESPONDIDAS: <scan>80</scan></p>
-      <p>PROMEDIO: <scan>25</scan></p>
-    </div>
-    <div id="categoria1">
-      <h1>CIENCIA Y EDUCACION</h1>
-      <div id="barracat"></div>
-      <p>ACIERTOS: <scan>6</scan></p>
-      <p>RESPONDIDAS: <scan>80</scan></p>
-      <p>PROMEDIO: <scan>25</scan></p>
-    </div>
-    <div id="categoria1">
-      <h1>ENTRETENIMIENTO</h1>
-      <div id="barracat"></div>
-      <p>ACIERTOS: <scan>6</scan></p>
-      <p>RESPONDIDAS: <scan>80</scan></p>
-      <p>PROMEDIO: <scan>25</scan></p>
-    </div>
-  </div>
-  <div id="atras" data-tooltip="GERİ">
-    <a href="#"><img src='geri.png' alt='GERİ'/></a>
-  </div>
-</div> */}
+        
 
 </div>
 
